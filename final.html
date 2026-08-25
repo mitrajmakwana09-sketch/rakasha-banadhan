@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Raksha Bandhan ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: "Noto Sans Gujarati", "Nirmala UI", Arial, sans-serif;
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #4b0827 0%,
+                    #1d0317 40%,
+                    #050108 90%
+                );
+        }
+
+        /* Main glow */
+        .main-glow {
+            position: fixed;
+            width: 550px;
+            height: 550px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: #ff8c00;
+            opacity: .12;
+            filter: blur(100px);
+            animation: mainGlow 4s infinite alternate;
+        }
+
+        @keyframes mainGlow {
+            from {
+                transform:
+                    translate(-50%, -50%)
+                    scale(.7);
+            }
+
+            to {
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.2);
+            }
+        }
+
+        /* Navbar */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 22px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 30;
+        }
+
+        .logo {
+            color: #ffd369;
+            font-family: Georgia, serif;
+            font-size: 22px;
+        }
+
+        .music-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid #ff4d8d;
+            background: rgba(255, 0, 90, .12);
+            color: white;
+            font-size: 19px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Main */
+        .main {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .content {
+            width: 92%;
+            max-width: 900px;
+            text-align: center;
+            animation: contentAppear 1.5s ease;
+        }
+
+        @keyframes contentAppear {
+            from {
+                opacity: 0;
+                transform: scale(.75) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Small heading */
+        .small-title {
+            font-size: 20px;
+            color: #eee;
+            margin-bottom: 10px;
+        }
+
+        /* Main heading */
+        .happy {
+            font-family: Georgia, serif;
+            font-size: clamp(48px, 7vw, 75px);
+            font-style: italic;
+            color: white;
+            line-height: 1;
+            text-shadow:
+                0 0 15px rgba(255,255,255,.3);
+        }
+
+        .raksha {
+            font-family: Georgia, serif;
+            font-size: clamp(55px, 8vw, 90px);
+            font-style: italic;
+            color: #ffc447;
+            line-height: 1;
+            margin-top: 10px;
+
+            text-shadow:
+                0 0 10px #ffb000,
+                0 0 30px rgba(255,170,0,.6),
+                0 0 60px rgba(255,80,0,.3);
+
+            animation: goldenText 2s infinite alternate;
+        }
+
+        @keyframes goldenText {
+            from {
+                text-shadow:
+                    0 0 10px #ffb000,
+                    0 0 25px rgba(255,170,0,.5);
+            }
+
+            to {
+                text-shadow:
+                    0 0 20px #ffd34e,
+                    0 0 50px rgba(255,170,0,.8),
+                    0 0 80px rgba(255,80,0,.3);
+            }
+        }
+
+        /* Rakhi symbol */
+        .rakhi-symbol {
+            margin: 25px auto 15px;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: 4px solid #ffc447;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 42px;
+
+            box-shadow:
+                0 0 15px #ffb000,
+                0 0 40px rgba(255,160,0,.5);
+
+            animation:
+                rakhiRotate 8s linear infinite,
+                rakhiPulse 2s infinite alternate;
+        }
+
+        @keyframes rakhiRotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rakhiPulse {
+            from {
+                box-shadow:
+                    0 0 10px #ffb000;
+            }
+
+            to {
+                box-shadow:
+                    0 0 25px #ffd34e,
+                    0 0 60px rgba(255,160,0,.6);
+            }
+        }
+
+        /* Message */
+        .message {
+            max-width: 620px;
+            margin: 0 auto;
+            color: #ddd;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: #ffc447;
+            font-weight: bold;
+        }
+
+        /* Button */
+        .thank-btn {
+            margin-top: 25px;
+            padding: 15px 38px;
+            border-radius: 50px;
+            border: 2px solid #ffc447;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff286f,
+                    #ff7043
+                );
+
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+
+            box-shadow:
+                0 0 20px rgba(255,50,100,.6);
+
+            transition: .3s;
+        }
+
+        .thank-btn:hover {
+            transform: scale(1.08);
+            box-shadow:
+                0 0 35px rgba(255,50,100,.9);
+        }
+
+        /* Bottom */
+        .bottom-text {
+            margin-top: 25px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* Fireworks */
+        .firework {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ffd34e;
+            box-shadow:
+                0 0 10px #ffd34e,
+                0 0 20px #ff9d00;
+            z-index: 3;
+            animation: firework 2.5s infinite;
+        }
+
+        @keyframes firework {
+            0% {
+                transform: scale(.1);
+                opacity: 0;
+            }
+
+            20% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            60% {
+                box-shadow:
+                    0 -80px 0 #ffc447,
+                    55px -55px 0 #ff4d8d,
+                    80px 0 0 #ffd369,
+                    55px 55px 0 #ff7b39,
+                    0 80px 0 #ffc447,
+                    -55px 55px 0 #ff4d8d,
+                    -80px 0 0 #ffd369,
+                    -55px -55px 0 #ff7b39;
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(.2);
+                opacity: 0;
+            }
+        }
+
+        .firework.one {
+            left: 15%;
+            top: 28%;
+            animation-delay: .2s;
+        }
+
+        .firework.two {
+            right: 15%;
+            top: 30%;
+            animation-delay: 1s;
+        }
+
+        .firework.three {
+            left: 22%;
+            bottom: 20%;
+            animation-delay: 1.7s;
+        }
+
+        .firework.four {
+            right: 22%;
+            bottom: 20%;
+            animation-delay: 2.2s;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            color: #ff4b83;
+            font-size: 20px;
+            pointer-events: none;
+            z-index: 4;
+
+            animation:
+                heartFloat linear infinite;
+        }
+
+        @keyframes heartFloat {
+            from {
+                transform:
+                    translateY(110vh)
+                    scale(.5);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            to {
+                transform:
+                    translateY(-20vh)
+                    scale(1.2)
+                    rotate(20deg);
+                opacity: 0;
+            }
+        }
+
+        /* Golden particles */
+        .particle {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            background: #ffc447;
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 10px #ffb000;
+
+            pointer-events: none;
+            z-index: 2;
+
+            animation:
+                particleMove linear infinite;
+        }
+
+        @keyframes particleMove {
+            from {
+                transform:
+                    translateY(110vh)
+                    rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            to {
+                transform:
+                    translateY(-20vh)
+                    rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Celebration overlay */
+        .celebration {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: .5s;
+            z-index: 100;
+        }
+
+        .celebration.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .celebration-card {
+            width: 90%;
+            max-width: 450px;
+            padding: 35px;
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #4d0a2b,
+                    #190313
+                );
+
+            border: 1px solid #ffbd3b;
+
+            text-align: center;
+
+            box-shadow:
+                0 0 30px rgba(255,150,0,.4);
+
+            transform: scale(.7);
+            transition: .5s;
+        }
+
+        .celebration.show .celebration-card {
+            transform: scale(1);
+        }
+
+        .celebration-card h2 {
+            color: #ffc447;
+            font-family: Georgia, serif;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .celebration-card p {
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        .close-btn {
+            margin-top: 20px;
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: 1px solid #ffbd3b;
+            background: transparent;
+            color: #ffd369;
+            cursor: pointer;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 18px 5%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .small-title {
+                font-size: 16px;
+            }
+
+            .happy {
+                font-size: 48px;
+            }
+
+            .raksha {
+                font-size: 57px;
+            }
+
+            .rakhi-symbol {
+                width: 70px;
+                height: 70px;
+                font-size: 34px;
+                margin-top: 20px;
+            }
+
+            .message {
+                width: 90%;
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .bottom-text {
+                font-size: 12px;
+            }
+
+            .firework.one {
+                left: 5%;
+            }
+
+            .firework.two {
+                right: 5%;
+            }
+
+            .firework.three,
+            .firework.four {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Glow -->
+    <div class="main-glow"></div>
+
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🌸 Rakhi Surprise
+        </div>
+
+        <button
+            class="music-btn"
+            id="musicBtn"
+            onclick="toggleMusic()">
+            🎵
+        </button>
+
+    </nav>
+
+
+    <!-- Fireworks -->
+    <div class="firework one"></div>
+    <div class="firework two"></div>
+    <div class="firework three"></div>
+    <div class="firework four"></div>
+
+
+    <!-- Main -->
+    <main class="main">
+
+        <section class="content">
+
+            <p class="small-title">
+                🧵 પ્રેમ અને યાદોની આ સુંદર ઉજવણી...
+            </p>
+
+
+            <h1 class="happy">
+                Happy
+            </h1>
+
+            <h2 class="raksha">
+                Raksha Bandhan!
+            </h2>
+
+
+            <!-- Rakhi -->
+            <div class="rakhi-symbol">
+                🧵
+            </div>
+
+
+            <!-- Message -->
+            <p class="message">
+
+                મારી વહાલી બહેન ❤️<br>
+
+                તું મારા જીવનની સૌથી સુંદર યાદોમાંથી
+                એક છે. આપણી દરેક નાની-મોટી મસ્તી,
+                હાસ્ય અને યાદો હંમેશા મારા દિલમાં
+                ખાસ રહેશે.
+
+                <br><br>
+
+                <span class="highlight">
+                    આપણો આ ભાઈ-બહેનનો સંબંધ
+                    હંમેશા આવો જ સુંદર રહે. ❤️
+                </span>
+
+            </p>
+
+
+            <!-- Button -->
+            <button
+                class="thank-btn"
+                onclick="showThankYou()">
+
+                THANK YOU ❤️
+
+            </button>
+
+
+            <p class="bottom-text">
+                Made with ❤️ for the most special sister
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Celebration Popup -->
+    <div
+        class="celebration"
+        id="celebration">
+
+        <div class="celebration-card">
+
+            <h2>
+                ❤️ Thank You ❤️
+            </h2>
+
+            <p>
+                તારી સાથેની દરેક યાદ મારા માટે
+                ખૂબ જ કિંમતી છે.
+
+                <br><br>
+
+                આ સુંદર સંબંધ હંમેશા
+                આવો જ મજબૂત રહે. ✨
+
+                <br><br>
+
+                <strong>
+                    Happy Raksha Bandhan! 🧵
+                </strong>
+            </p>
+
+            <button
+                class="close-btn"
+                onclick="closePopup()">
+
+                CLOSE
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Music -->
+    <audio id="rakhiMusic" loop>
+
+        <source
+            src="../assets/audio/rakhi-music.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <script>
+
+        const music =
+            document.getElementById("rakhiMusic");
+
+        const musicBtn =
+            document.getElementById("musicBtn");
+
+        const celebration =
+            document.getElementById("celebration");
+
+        let musicPlaying = false;
+
+
+        /* Music */
+        function toggleMusic() {
+
+            if (!musicPlaying) {
+
+                music.play().catch(() => {});
+
+                musicBtn.innerHTML = "🔊";
+
+                musicPlaying = true;
+
+            } else {
+
+                music.pause();
+
+                musicBtn.innerHTML = "🎵";
+
+                musicPlaying = false;
+            }
+        }
+
+
+        /* Thank You Popup */
+        function showThankYou() {
+
+            celebration.classList.add("show");
+
+            createConfetti();
+
+        }
+
+
+        function closePopup() {
+
+            celebration.classList.remove("show");
+
+        }
+
+
+        /* Hearts */
+        function createHearts() {
+
+            for (let i = 18; i > 0; i--) {
+
+                const heart =
+                    document.createElement("div");
+
+                heart.className = "heart";
+
+                heart.innerHTML = "♥";
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.animationDuration =
+                    (5 + Math.random() * 7) + "s";
+
+                heart.style.animationDelay =
+                    Math.random() * 6 + "s";
+
+                heart.style.fontSize =
+                    (14 + Math.random() * 15) + "px";
+
+                document.body.appendChild(heart);
+            }
+        }
+
+
+        /* Particles */
+        function createParticles() {
+
+            for (let i = 45; i > 0; i--) {
+
+                const particle =
+                    document.createElement("div");
+
+                particle.className = "particle";
+
+                particle.style.left =
+                    Math.random() * 100 + "vw";
+
+                particle.style.animationDuration =
+                    (4 + Math.random() * 8) + "s";
+
+                particle.style.animationDelay =
+                    Math.random() * 7 + "s";
+
+                particle.style.width =
+                    (3 + Math.random() * 5) + "px";
+
+                particle.style.height =
+                    particle.style.width;
+
+                document.body.appendChild(particle);
+            }
+        }
+
+
+        /* Confetti */
+        function createConfetti() {
+
+            const symbols = [
+                "❤️",
+                "✨",
+                "🌸",
+                "💛",
+                "🎉",
+                "⭐",
+                "🧵"
+            ];
+
+            for (let i = 80; i > 0; i--) {
+
+                const item =
+                    document.createElement("div");
+
+                item.innerHTML =
+                    symbols[
+                        Math.floor(
+                            Math.random() *
+                            symbols.length
+                        )
+                    ];
+
+                item.style.position = "fixed";
+
+                item.style.left =
+                    Math.random() * 100 + "vw";
+
+                item.style.top = "-30px";
+
+                item.style.fontSize =
+                    (14 + Math.random() * 22) + "px";
+
+                item.style.zIndex = "200";
+
+                item.style.pointerEvents = "none";
+
+                document.body.appendChild(item);
+
+                const duration =
+                    1200 + Math.random() * 2000;
+
+                item.animate(
+                    [
+                        {
+                            transform:
+                                "translateY(0) rotate(0deg)",
+                            opacity: 1
+                        },
+
+                        {
+                            transform:
+                                `translateY(110vh) rotate(${Math.random() * 720}deg)`,
+                            opacity: 0
+                        }
+                    ],
+                    {
+                        duration: duration,
+                        easing:
+                            "cubic-bezier(.2,.8,.3,1)"
+                    }
+                );
+
+                setTimeout(() => {
+
+                    item.remove();
+
+                }, duration);
+            }
+        }
+
+
+        createHearts();
+        createParticles();
+
+        /* First celebration */
+        setTimeout(() => {
+            createConfetti();
+        }, 1800);
+
+    </script>
+
+</body>
+</html>

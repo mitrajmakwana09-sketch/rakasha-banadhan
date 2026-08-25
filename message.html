@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Special Letter 💌 | Rakhi Surprise</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: white;
+            background:
+                radial-gradient(
+                    circle at center,
+                    #4a0924 0%,
+                    #1c0416 42%,
+                    #050108 90%
+                );
+        }
+
+        /* Background */
+        .glow {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: #ff8a00;
+            opacity: .12;
+            filter: blur(100px);
+            animation: glow 4s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                transform: translate(-50%, -50%) scale(.7);
+            }
+
+            to {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+
+        /* Navbar */
+        .navbar {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 22px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 20;
+        }
+
+        .logo {
+            color: #ffd369;
+            font-family: Georgia, serif;
+            font-size: 22px;
+        }
+
+        .music-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid #ff4d8d;
+            background: rgba(255, 0, 90, .12);
+            color: white;
+            font-size: 19px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Main */
+        .main {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 5;
+        }
+
+        .content {
+            width: 92%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .top-text {
+            color: #ddd;
+            font-size: 18px;
+            margin-bottom: 8px;
+            animation: fadeDown 1s ease;
+        }
+
+        .title {
+            color: #ffc447;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: clamp(48px, 7vw, 75px);
+            text-shadow:
+                0 0 15px rgba(255, 196, 71, .4);
+            margin-bottom: 15px;
+            animation: fadeDown 1.2s ease;
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Envelope area */
+        .envelope-area {
+            position: relative;
+            width: 350px;
+            height: 260px;
+            margin: 15px auto 0;
+            perspective: 1000px;
+        }
+
+        /* Envelope */
+        .envelope {
+            position: absolute;
+            width: 320px;
+            height: 190px;
+            left: 50%;
+            bottom: 10px;
+            transform: translateX(-50%);
+            background: linear-gradient(
+                135deg,
+                #f7b64b,
+                #c96d20
+            );
+            border-radius: 8px;
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.5),
+                0 0 25px rgba(255,170,40,.25);
+        }
+
+        /* Letter */
+        .letter {
+            position: absolute;
+            width: 285px;
+            height: 190px;
+            left: 50%;
+            bottom: 25px;
+            transform:
+                translateX(-50%)
+                translateY(90px);
+            background: #fff7df;
+            color: #351321;
+            border-radius: 5px;
+            padding: 25px;
+            z-index: 2;
+            opacity: 0;
+            transition:
+                transform 1.3s cubic-bezier(.2,.8,.3,1),
+                opacity .7s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,.3);
+        }
+
+        .letter h2 {
+            font-family: Georgia, serif;
+            color: #a42a4c;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .letter p {
+            font-family: Georgia, serif;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Envelope flap */
+        .flap {
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 0;
+            top: 0;
+            border-left: 160px solid transparent;
+            border-right: 160px solid transparent;
+            border-top: 110px solid #e49a36;
+            transform-origin: top;
+            transition: 1s ease;
+            z-index: 6;
+        }
+
+        /* Envelope front */
+        .front {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 125px;
+            background: linear-gradient(
+                135deg,
+                #d88429,
+                #b65b1e
+            );
+            clip-path: polygon(
+                0 0,
+                50% 70%,
+                100% 0,
+                100% 100%,
+                0 100%
+            );
+            z-index: 5;
+            border-radius: 0 0 8px 8px;
+        }
+
+        /* Heart seal */
+        .seal {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            background: #d9275f;
+            border-radius: 50%;
+            left: 50%;
+            top: 75px;
+            transform: translateX(-50%);
+            z-index: 8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            box-shadow:
+                0 0 15px rgba(255,50,100,.7);
+            transition: .5s;
+        }
+
+        /* Open envelope */
+        .envelope.open .flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        .envelope.open .seal {
+            opacity: 0;
+            transform:
+                translateX(-50%)
+                scale(.5);
+        }
+
+        .envelope.open .letter {
+            opacity: 1;
+            transform:
+                translateX(-50%)
+                translateY(-65px);
+        }
+
+        /* Letter text */
+        .typing {
+            min-height: 95px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 18px;
+            background: #a42a4c;
+            animation: blink .7s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Open button */
+        .open-letter-btn {
+            margin-top: 18px;
+            padding: 14px 32px;
+            border: 2px solid #ffc447;
+            border-radius: 50px;
+            background: linear-gradient(
+                90deg,
+                #ff286f,
+                #ff7043
+            );
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow:
+                0 0 20px rgba(255,60,100,.5);
+            transition: .3s;
+        }
+
+        .open-letter-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Continue button */
+        .continue-btn {
+            display: none;
+            margin-top: 15px;
+            padding: 13px 28px;
+            border: 1px solid #ffcf55;
+            border-radius: 50px;
+            background: transparent;
+            color: #ffd369;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .continue-btn:hover {
+            background: rgba(255,196,71,.1);
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            color: #ff4b83;
+            font-size: 20px;
+            pointer-events: none;
+            z-index: 2;
+            animation: heartFloat linear infinite;
+        }
+
+        @keyframes heartFloat {
+            from {
+                transform:
+                    translateY(110vh)
+                    scale(.5);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            to {
+                transform:
+                    translateY(-20vh)
+                    scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Stars */
+        .star {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #ffd369;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ffc447;
+            animation: starMove linear infinite;
+        }
+
+        @keyframes starMove {
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-20vh);
+                opacity: 0;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 18px 5%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .top-text {
+                font-size: 15px;
+            }
+
+            .title {
+                font-size: 50px;
+            }
+
+            .envelope-area {
+                transform: scale(.82);
+                margin-top: -5px;
+                margin-bottom: -15px;
+            }
+
+            .letter {
+                padding: 20px;
+            }
+
+            .letter h2 {
+                font-size: 20px;
+            }
+
+            .letter p {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            .envelope-area {
+                transform: scale(.72);
+                margin-top: -20px;
+            }
+
+            .title {
+                font-size: 44px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="glow"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🌸 Rakhi Surprise
+        </div>
+
+        <button
+            class="music-btn"
+            id="musicBtn"
+            onclick="toggleMusic()">
+            🎵
+        </button>
+
+    </nav>
+
+
+    <!-- Main -->
+    <main class="main">
+
+        <div class="content">
+
+            <p class="top-text">
+                💌 A little message from my heart
+            </p>
+
+            <h1 class="title">
+                To My Dearest ❤️
+            </h1>
+
+
+            <!-- Envelope -->
+            <div class="envelope-area">
+
+                <div class="envelope" id="envelope">
+
+                    <!-- Letter -->
+                    <div class="letter">
+
+                        <h2>
+                            Dear Sister ❤️
+                        </h2>
+
+                        <p class="typing" id="typingText"></p>
+
+                    </div>
+
+                    <!-- Flap -->
+                    <div class="flap"></div>
+
+                    <!-- Seal -->
+                    <div class="seal">
+                        ❤️
+                    </div>
+
+                    <!-- Front -->
+                    <div class="front"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Button -->
+            <button
+                class="open-letter-btn"
+                id="openBtn"
+                onclick="openLetter()">
+
+                OPEN LETTER 💌
+
+            </button>
+
+
+            <button
+                class="continue-btn"
+                id="continueBtn"
+                onclick="goNext()">
+
+                CONTINUE ✨
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- Music -->
+    <audio id="rakhiMusic" loop>
+        <source
+            src="../assets/audio/rakhi-music.mp3"
+            type="audio/mpeg">
+    </audio>
+
+
+    <script>
+
+        const envelope =
+            document.getElementById("envelope");
+
+        const openBtn =
+            document.getElementById("openBtn");
+
+        const continueBtn =
+            document.getElementById("continueBtn");
+
+        const typingText =
+            document.getElementById("typingText");
+
+        const music =
+            document.getElementById("rakhiMusic");
+
+        const musicBtn =
+            document.getElementById("musicBtn");
+
+
+        let opened = false;
+        let musicPlaying = false;
+
+
+        /* Message */
+        const message =
+            "Thank you for being a beautiful part of my life. From silly fights to unforgettable memories, every moment with you is special. No matter where life takes us, our bond will always remain strong. ❤️";
+
+
+        /* Open Letter */
+        function openLetter() {
+
+            if (opened) return;
+
+            opened = true;
+
+            envelope.classList.add("open");
+
+            openBtn.style.display = "none";
+
+            setTimeout(() => {
+
+                typeMessage();
+
+            }, 900);
+        }
+
+
+        /* Typing effect */
+        function typeMessage() {
+
+            let index = 0;
+
+            function type() {
+
+                if (index < message.length) {
+
+                    typingText.innerHTML =
+                        message.substring(0, index + 1) +
+                        '<span class="cursor"></span>';
+
+                    index++;
+
+                    setTimeout(type, 35);
+
+                } else {
+
+                    typingText.innerHTML =
+                        message;
+
+                    continueBtn.style.display =
+                        "inline-block";
+
+                    createCelebration();
+                }
+            }
+
+            type();
+        }
+
+
+        /* Continue */
+        function goNext() {
+
+            createCelebration();
+
+            setTimeout(() => {
+
+                window.location.href =
+                    "final.html";
+
+            }, 800);
+        }
+
+
+        /* Music */
+        function toggleMusic() {
+
+            if (!musicPlaying) {
+
+                music.play().catch(() => {});
+
+                musicBtn.innerHTML = "🔊";
+
+                musicPlaying = true;
+
+            } else {
+
+                music.pause();
+
+                musicBtn.innerHTML = "🎵";
+
+                musicPlaying = false;
+            }
+        }
+
+
+        /* Hearts */
+        function createHearts() {
+
+            for (let i = 0; i < 16; i++) {
+
+                const heart =
+                    document.createElement("div");
+
+                heart.className = "heart";
+
+                heart.innerHTML = "♥";
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.animationDuration =
+                    (5 + Math.random() * 6) + "s";
+
+                heart.style.animationDelay =
+                    Math.random() * 6 + "s";
+
+                document.body.appendChild(heart);
+            }
+        }
+
+
+        /* Stars */
+        function createStars() {
+
+            for (let i = 0; i < 35; i++) {
+
+                const star =
+                    document.createElement("div");
+
+                star.className = "star";
+
+                star.style.left =
+                    Math.random() * 100 + "vw";
+
+                star.style.animationDuration =
+                    (4 + Math.random() * 7) + "s";
+
+                star.style.animationDelay =
+                    Math.random() * 5 + "s";
+
+                document.body.appendChild(star);
+            }
+        }
+
+
+        /* Celebration */
+        function createCelebration() {
+
+            const symbols = [
+                "❤️",
+                "✨",
+                "🌸",
+                "💛"
+            ];
+
+            for (let i = 0; i < 25; i++) {
+
+                const item =
+                    document.createElement("div");
+
+                item.innerHTML =
+                    symbols[
+                        Math.floor(
+                            Math.random() *
+                            symbols.length
+                        )
+                    ];
+
+                item.style.position = "fixed";
+
+                item.style.left =
+                    Math.random() * 100 + "vw";
+
+                item.style.top = "-20px";
+
+                item.style.fontSize =
+                    (15 + Math.random() * 15) + "px";
+
+                item.style.zIndex = "100";
+
+                document.body.appendChild(item);
+
+                const duration =
+                    1200 + Math.random() * 1500;
+
+                item.animate(
+                    [
+                        {
+                            transform:
+                                "translateY(0) rotate(0deg)",
+                            opacity: 1
+                        },
+                        {
+                            transform:
+                                `translateY(110vh) rotate(360deg)`,
+                            opacity: 0
+                        }
+                    ],
+                    {
+                        duration: duration,
+                        easing: "ease-out"
+                    }
+                );
+
+                setTimeout(() => {
+                    item.remove();
+                }, duration);
+            }
+        }
+
+
+        createHearts();
+        createStars();
+
+    </script>
+
+</body>
+</html>

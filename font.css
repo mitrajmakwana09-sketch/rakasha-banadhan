@@ -1,0 +1,139 @@
+/* =========================================
+   RAKHI SURPRISE - FONT SETTINGS
+   File: assets/fonts/font.css
+   ========================================= */
+
+/* Gujarati Font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap');
+
+/* English Elegant Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+
+/* English Script Style */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+
+/* =========================================
+   DEFAULT FONT
+   ========================================= */
+
+body {
+    font-family:
+        "Noto Sans Gujarati",
+        "Nirmala UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================
+   GUJARATI TEXT
+   ========================================= */
+
+.gujarati-text {
+    font-family:
+        "Noto Sans Gujarati",
+        "Nirmala UI",
+        sans-serif;
+}
+
+
+/* =========================================
+   ELEGANT ENGLISH HEADINGS
+   ========================================= */
+
+.elegant-font {
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+}
+
+
+/* =========================================
+   SCRIPT / HANDWRITTEN STYLE
+   ========================================= */
+
+.script-font {
+    font-family:
+        "Great Vibes",
+        cursive;
+}
+
+
+/* =========================================
+   RAKHI WEBSITE HEADINGS
+   ========================================= */
+
+.logo,
+.title,
+.happy,
+.raksha,
+.main-title,
+.for-you {
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+}
+
+
+/* Special Script Titles */
+
+.script-title {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+button {
+    font-family:
+        "Noto Sans Gujarati",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================
+   LETTER
+   ========================================= */
+
+.letter {
+    font-family:
+        "Noto Sans Gujarati",
+        "Nirmala UI",
+        sans-serif;
+}
+
+.letter h2 {
+    font-family:
+        "Playfair Display",
+        "Noto Sans Gujarati",
+        Georgia,
+        serif;
+}
+
+.letter p {
+    font-family:
+        "Noto Sans Gujarati",
+        "Nirmala UI",
+        sans-serif;
+}
+
+
+/* =========================================
+   SMOOTH TEXT RENDERING
+   ========================================= */
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
