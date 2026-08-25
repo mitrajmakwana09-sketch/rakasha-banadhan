@@ -1,0 +1,672 @@
+/* =========================================
+   RAKHI SURPRISE
+   responsive.css
+   Mobile + Tablet + Desktop
+   ========================================= */
+
+
+/* =========================================
+   GLOBAL RESPONSIVE FIX
+   ========================================= */
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+    max-width: 100%;
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+   1200px+
+   ========================================= */
+
+@media (min-width: 1200px) {
+
+    .content {
+        max-width: 1000px;
+    }
+
+    .main-title {
+        font-size: 80px;
+    }
+
+    .title {
+        font-size: 78px;
+    }
+
+    .happy {
+        font-size: 80px;
+    }
+
+    .raksha {
+        font-size: 95px;
+    }
+
+    .message {
+        max-width: 700px;
+        font-size: 19px;
+    }
+
+    .gift-box {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   DESKTOP / LAPTOP
+   992px - 1199px
+   ========================================= */
+
+@media (max-width: 1199px) {
+
+    .navbar {
+        padding: 20px 6%;
+    }
+
+    .content {
+        width: 92%;
+    }
+
+    .main-title {
+        font-size: 68px;
+    }
+
+    .title {
+        font-size: 68px;
+    }
+
+    .happy {
+        font-size: 70px;
+    }
+
+    .raksha {
+        font-size: 82px;
+    }
+
+    .message {
+        max-width: 650px;
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================
+   TABLET
+   768px - 991px
+   ========================================= */
+
+@media (max-width: 991px) {
+
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .music-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .content {
+        width: 94%;
+        max-width: 760px;
+    }
+
+    .main-title {
+        font-size: 58px;
+    }
+
+    .title {
+        font-size: 58px;
+    }
+
+    .happy {
+        font-size: 62px;
+    }
+
+    .raksha {
+        font-size: 72px;
+    }
+
+    .small-title {
+        font-size: 18px;
+    }
+
+    .message {
+        width: 90%;
+        max-width: 600px;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .gift-box {
+        transform: scale(.9);
+    }
+
+    .envelope-area {
+        transform: scale(.9);
+    }
+
+    .rakhi-symbol {
+        width: 78px;
+        height: 78px;
+        font-size: 38px;
+    }
+
+    .thank-btn,
+    .open-letter-btn {
+        padding: 14px 30px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   576px - 767px
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    body {
+        min-height: 100svh;
+    }
+
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .music-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .main {
+        min-height: 100svh;
+        padding: 85px 0 30px;
+    }
+
+    .content {
+        width: 94%;
+        max-width: 600px;
+    }
+
+    .small-title,
+    .top-text {
+        font-size: 15px;
+    }
+
+    .main-title,
+    .title {
+        font-size: 50px;
+        line-height: 1.05;
+    }
+
+    .happy {
+        font-size: 50px;
+        line-height: 1;
+    }
+
+    .raksha {
+        font-size: 58px;
+        line-height: 1.05;
+    }
+
+    .message {
+        width: 92%;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .bottom-text {
+        font-size: 12px;
+    }
+
+    .gift-box {
+        transform: scale(.78);
+        margin-top: -15px;
+        margin-bottom: -20px;
+    }
+
+    .envelope-area {
+        transform: scale(.78);
+        margin-top: -10px;
+        margin-bottom: -20px;
+    }
+
+    .rakhi-symbol {
+        width: 72px;
+        height: 72px;
+        font-size: 34px;
+        margin: 18px auto;
+    }
+
+    .thank-btn,
+    .open-letter-btn {
+        font-size: 14px;
+        padding: 13px 25px;
+    }
+
+    .continue-btn {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+
+    .letter {
+        width: 285px;
+        max-width: 85vw;
+    }
+
+    .letter h2 {
+        font-size: 22px;
+    }
+
+    .letter p {
+        font-size: 14px;
+    }
+
+    .celebration-card {
+        width: 90%;
+        padding: 28px 20px;
+    }
+
+    .celebration-card h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   400px - 575px
+   ========================================= */
+
+@media (max-width: 575px) {
+
+    .navbar {
+        padding: 14px 4%;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .music-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .main {
+        padding-top: 75px;
+    }
+
+    .main-title,
+    .title {
+        font-size: 43px;
+    }
+
+    .happy {
+        font-size: 44px;
+    }
+
+    .raksha {
+        font-size: 51px;
+    }
+
+    .small-title,
+    .top-text {
+        font-size: 14px;
+    }
+
+    .message {
+        width: 94%;
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .gift-box {
+        transform: scale(.68);
+        margin-top: -25px;
+        margin-bottom: -35px;
+    }
+
+    .envelope-area {
+        transform: scale(.68);
+        margin-top: -25px;
+        margin-bottom: -35px;
+    }
+
+    .rakhi-symbol {
+        width: 65px;
+        height: 65px;
+        font-size: 30px;
+    }
+
+    .thank-btn,
+    .open-letter-btn {
+        padding: 12px 22px;
+        font-size: 13px;
+    }
+
+    .letter {
+        max-width: 82vw;
+    }
+
+    .letter h2 {
+        font-size: 20px;
+    }
+
+    .letter p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .celebration-card {
+        padding: 25px 18px;
+    }
+
+    .celebration-card h2 {
+        font-size: 27px;
+    }
+
+    .celebration-card p {
+        font-size: 14px;
+    }
+
+    .firework.three,
+    .firework.four {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   EXTRA SMALL PHONES
+   360px - 399px
+   ========================================= */
+
+@media (max-width: 399px) {
+
+    .logo {
+        font-size: 15px;
+    }
+
+    .main-title,
+    .title {
+        font-size: 38px;
+    }
+
+    .happy {
+        font-size: 40px;
+    }
+
+    .raksha {
+        font-size: 45px;
+    }
+
+    .small-title,
+    .top-text {
+        font-size: 13px;
+    }
+
+    .message {
+        font-size: 13px;
+    }
+
+    .gift-box {
+        transform: scale(.58);
+        margin-top: -35px;
+        margin-bottom: -50px;
+    }
+
+    .envelope-area {
+        transform: scale(.60);
+        margin-top: -35px;
+        margin-bottom: -50px;
+    }
+
+    .rakhi-symbol {
+        width: 60px;
+        height: 60px;
+        font-size: 27px;
+    }
+
+    .thank-btn,
+    .open-letter-btn {
+        padding: 11px 18px;
+        font-size: 12px;
+    }
+
+    .letter {
+        max-width: 80vw;
+        padding: 17px;
+    }
+
+    .letter h2 {
+        font-size: 18px;
+    }
+
+    .letter p {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   Below 360px
+   ========================================= */
+
+@media (max-width: 359px) {
+
+    .main-title,
+    .title {
+        font-size: 34px;
+    }
+
+    .happy {
+        font-size: 36px;
+    }
+
+    .raksha {
+        font-size: 40px;
+    }
+
+    .message {
+        font-size: 12px;
+    }
+
+    .gift-box {
+        transform: scale(.52);
+    }
+
+    .envelope-area {
+        transform: scale(.54);
+    }
+
+    .thank-btn,
+    .open-letter-btn {
+        padding: 10px 16px;
+    }
+}
+
+
+/* =========================================
+   LANDSCAPE MOBILE
+   ========================================= */
+
+@media (max-height: 550px) and (orientation: landscape) {
+
+    .navbar {
+        padding: 10px 5%;
+    }
+
+    .main {
+        padding-top: 65px;
+        padding-bottom: 15px;
+        align-items: flex-start;
+    }
+
+    .content {
+        transform: scale(.78);
+        transform-origin: top center;
+    }
+
+    .gift-box {
+        transform: scale(.65);
+        margin-top: -50px;
+        margin-bottom: -70px;
+    }
+
+    .envelope-area {
+        transform: scale(.62);
+        margin-top: -45px;
+        margin-bottom: -70px;
+    }
+
+    .rakhi-symbol {
+        margin: 10px auto;
+    }
+
+    .message {
+        line-height: 1.4;
+    }
+
+    .bottom-text {
+        margin-top: 10px;
+    }
+}
+
+
+/* =========================================
+   TOUCH DEVICES
+   ========================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    button {
+        min-height: 44px;
+    }
+
+    .thank-btn,
+    .open-letter-btn,
+    .continue-btn {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button:active {
+        transform: scale(.96);
+    }
+}
+
+
+/* =========================================
+   SAFE AREA FOR MODERN PHONES
+   ========================================= */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+
+    .navbar {
+        padding-top:
+            max(16px, env(safe-area-inset-top));
+
+        padding-left:
+            max(5%, env(safe-area-inset-left));
+
+        padding-right:
+            max(5%, env(safe-area-inset-right));
+    }
+
+    .main {
+        padding-bottom:
+            max(30px, env(safe-area-inset-bottom));
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+@media (max-width: 600px) {
+
+    .letter {
+        width: 290px;
+        min-height: 220px;
+
+        padding: 22px 18px 28px;
+    }
+
+    .letter h2 {
+        font-size: 23px;
+    }
+
+    .letter p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .envelope.open .letter {
+        transform:
+            translateX(-50%)
+            translateY(-75px);
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .letter {
+        width: 270px;
+        min-height: 215px;
+
+        padding: 20px 16px 25px;
+    }
+
+    .letter h2 {
+        font-size: 21px;
+    }
+
+    .letter p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}

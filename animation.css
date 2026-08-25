@@ -1,0 +1,717 @@
+
+/* =========================================
+   RAKHI SURPRISE
+   animations.css
+   ========================================= */
+
+
+/* =========================================
+   1. FADE ANIMATIONS
+   ========================================= */
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.fade-up {
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fade-down {
+    animation: fadeDown 1s ease forwards;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fade-left {
+    animation: fadeLeft 1s ease forwards;
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.fade-right {
+    animation: fadeRight 1s ease forwards;
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   2. SCALE ANIMATIONS
+   ========================================= */
+
+.scale-in {
+    animation: scaleIn 1s ease forwards;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.pop-in {
+    animation: popIn .7s cubic-bezier(.2, 1.5, .5, 1) forwards;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(.2);
+    }
+
+    70% {
+        transform: scale(1.08);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   3. FLOATING
+   ========================================= */
+
+.float {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+
+/* =========================================
+   4. GLOW
+   ========================================= */
+
+.glow {
+    animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+    from {
+        filter: brightness(1);
+        box-shadow:
+            0 0 10px rgba(255, 190, 60, .4);
+    }
+
+    to {
+        filter: brightness(1.2);
+        box-shadow:
+            0 0 20px rgba(255, 190, 60, .8),
+            0 0 45px rgba(255, 120, 0, .4);
+    }
+}
+
+
+/* =========================================
+   5. HEARTBEAT
+   ========================================= */
+
+.heartbeat {
+    display: inline-block;
+    animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.15);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================
+   6. ROTATE
+   ========================================= */
+
+.rotate {
+    animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.rotate-slow {
+    animation: rotate 15s linear infinite;
+}
+
+
+/* =========================================
+   7. SPARKLE
+   ========================================= */
+
+.sparkle {
+    animation: sparkle 1.8s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%,
+    100% {
+        opacity: .5;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+/* =========================================
+   8. SHINE BUTTON
+   ========================================= */
+
+.shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120px;
+
+    width: 70px;
+    height: 100%;
+
+    background:
+        rgba(255, 255, 255, .3);
+
+    transform: skewX(-25deg);
+
+    animation: shineMove 3s infinite;
+}
+
+@keyframes shineMove {
+    0% {
+        left: -120px;
+    }
+
+    45%,
+    100% {
+        left: 130%;
+    }
+}
+
+
+/* =========================================
+   9. TEXT GLOW
+   ========================================= */
+
+.text-glow {
+    animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow:
+            0 0 5px rgba(255, 196, 71, .3);
+    }
+
+    to {
+        text-shadow:
+            0 0 10px #ffc447,
+            0 0 25px #ff9d00,
+            0 0 45px rgba(255, 90, 0, .4);
+    }
+}
+
+
+/* =========================================
+   10. FLOATING HEARTS
+   ========================================= */
+
+.floating-heart {
+    position: fixed;
+
+    pointer-events: none;
+
+    color: #ff4b83;
+
+    animation:
+        heartFloat 6s linear infinite;
+}
+
+@keyframes heartFloat {
+    from {
+        transform:
+            translateY(110vh)
+            scale(.5)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(-20vh)
+            scale(1.2)
+            rotate(25deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   11. FLOATING PARTICLES
+   ========================================= */
+
+.floating-particle {
+    position: fixed;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #ffc447;
+
+    box-shadow:
+        0 0 10px #ffb000;
+
+    pointer-events: none;
+
+    animation:
+        particleFloat 7s linear infinite;
+}
+
+@keyframes particleFloat {
+    from {
+        transform:
+            translateY(110vh)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(-20vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   12. STAR TWINKLE
+   ========================================= */
+
+.twinkle {
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: .3;
+        transform: scale(.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================
+   13. BOUNCE
+   ========================================= */
+
+.bounce {
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+
+/* =========================================
+   14. SHAKE
+   ========================================= */
+
+.shake {
+    animation: shake .5s ease-in-out;
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+
+/* =========================================
+   15. FIREWORK BURST
+   ========================================= */
+
+.firework-burst {
+    animation:
+        fireworkBurst 2.5s ease-out infinite;
+}
+
+@keyframes fireworkBurst {
+    0% {
+        transform: scale(.1);
+        opacity: 0;
+    }
+
+    20% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    60% {
+        transform: scale(1.4);
+        opacity: .9;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   16. GIFT LID OPEN
+   ========================================= */
+
+.gift-open {
+    animation:
+        giftOpen 1.2s
+        cubic-bezier(.2, .8, .3, 1)
+        forwards;
+}
+
+@keyframes giftOpen {
+    from {
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    to {
+        transform:
+            translateY(-110px)
+            rotate(-8deg);
+    }
+}
+
+
+/* =========================================
+   17. LETTER OPEN
+   ========================================= */
+
+.letter-open {
+    animation:
+        letterOpen 1.2s
+        cubic-bezier(.2, .8, .3, 1)
+        forwards;
+}
+
+@keyframes letterOpen {
+    from {
+        opacity: 0;
+        transform:
+            translateY(70px)
+            scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(-50px)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   18. ENVELOPE FLAP
+   ========================================= */
+
+.flap-open {
+    animation:
+        flapOpen 1s ease forwards;
+}
+
+@keyframes flapOpen {
+    from {
+        transform: rotateX(0);
+    }
+
+    to {
+        transform: rotateX(180deg);
+    }
+}
+
+
+/* =========================================
+   19. TYPING CURSOR
+   ========================================= */
+
+.typing-cursor {
+    display: inline-block;
+
+    width: 2px;
+    height: 20px;
+
+    margin-left: 3px;
+
+    background: #a42a4c;
+
+    animation:
+        cursorBlink .7s infinite;
+}
+
+@keyframes cursorBlink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   20. CONFETTI
+   ========================================= */
+
+.confetti {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    animation:
+        confettiFall 2s
+        cubic-bezier(.2, .8, .3, 1)
+        forwards;
+}
+
+@keyframes confettiFall {
+    from {
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   21. PAGE TRANSITION
+   ========================================= */
+
+.page-enter {
+    animation:
+        pageEnter 1s ease forwards;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   22. DELAY HELPERS
+   ========================================= */
+
+.delay-1 {
+    animation-delay: .2s;
+}
+
+.delay-2 {
+    animation-delay: .4s;
+}
+
+.delay-3 {
+    animation-delay: .6s;
+}
+
+.delay-4 {
+    animation-delay: .8s;
+}
+
+.delay-5 {
+    animation-delay: 1s;
+}
+
+
+/* =========================================
+   23. REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+
+}
